@@ -3,9 +3,9 @@
   padding: 5px;
   color: #ccd;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  min-height: 100vh;
+  justify-content: space-evenly;
 }
 
 .Shopping__list__item {

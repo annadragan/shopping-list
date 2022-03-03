@@ -1,11 +1,12 @@
 import { localItems } from './db';
 import ListItem from './components/ListItem';
 import './styles.css';
+import Header from './components/Header';
 
 function App() {
   return (
     <>
-      <h1>Shopping List</h1>
+      <Header text="Shopping List" />
       <ListItem initialItems={localItems} />
     </>
   );
