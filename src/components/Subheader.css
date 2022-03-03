@@ -1,8 +1,8 @@
-.Header {
+.Subheader {
   border-top: 1px solid #ccd;
   border-bottom: 1px solid #ccd;
+  background-color: rgb(209, 123, 140);
   padding: 10px;
   display: flex;
   justify-content: center;
-  background-color: rgb(209, 123, 140);
 }
