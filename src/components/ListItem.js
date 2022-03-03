@@ -1,10 +1,12 @@
+import './ListItem.css';
+
 export default function ListItem({ initialItems }) {
   return (
-    <ul className="shopping__list">
+    <ul className="Shopping__list" role="list">
       {initialItems.map(item => {
         return (
-          <li key={initialItems._id}>
-            <button>{item.name.en}</button>
+          <li class="Shopping__list__item" key={initialItems._id}>
+            <button class="Shopping__list__item__button">{item.name.en}</button>
           </li>
         );
       })}
