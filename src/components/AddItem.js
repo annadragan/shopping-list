@@ -3,9 +3,15 @@ import './AddItem.css';
 
 export default function AddItem({ onAdd }) {
   const [itemName, setItemName] = useState('');
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    onAdd(itemName);
+    setItemName('');
+  }
   return (
-    <section className="Add-item__section">
-      <label htmlFor="new-item">######</label>
+    <form className="Add-item__section" onSubmit={handleSubmit}>
+      <label htmlFor="new-item">Your article:</label>
       <input
         id="new-item"
         onChange={event => setItemName(event.target.value)}
@@ -16,6 +22,6 @@ export default function AddItem({ onAdd }) {
       <button className="Add__Button" onClick={() => onAdd(itemName)}>
         Add Item
       </button>
-    </section>
+    </form>
   );
 }
