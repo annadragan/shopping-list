@@ -54,7 +54,7 @@ function App() {
           setSearchValue(event.target.value);
         }}
       ></input>
-      <Fetch value={searchValue} />
+      {searchValue && <Fetch value={searchValue} />}
     </>
   );
 }
