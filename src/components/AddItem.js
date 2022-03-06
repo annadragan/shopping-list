@@ -10,8 +10,10 @@ export default function AddItem({ onAdd }) {
     setItemName('');
   }
   return (
-    <form className="Add-item__section" onSubmit={handleSubmit}>
-      <label htmlFor="new-item">Your article:</label>
+    <form className="Add-item__form" onSubmit={handleSubmit}>
+      <label htmlFor="new-item" className="Add-item__label">
+        Your article:
+      </label>
       <input
         id="new-item"
         onChange={event => setItemName(event.target.value)}
@@ -20,7 +22,7 @@ export default function AddItem({ onAdd }) {
         className="Add__input"
       ></input>
       <button className="Add__Button" onClick={() => onAdd(itemName)}>
-        Add Item
+        Add article
       </button>
     </form>
   );
