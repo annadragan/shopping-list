@@ -18,10 +18,13 @@ export default function AddItem({ onAdd }) {
         id="new-item"
         onChange={event => setItemName(event.target.value)}
         value={itemName}
-        type="text"
+        role="searchbox"
+        type="search"
         className="Add__input"
       ></input>
-      <button className="Add__Button">Add article</button>
+      <button aria-label={'add button'} className="Add__Button">
+        Add article
+      </button>
     </form>
   );
 }

@@ -57,10 +57,6 @@ function App() {
       setArticles([...articles, newItem]);
     }
   }
-  // const clearInput = () => {
-  //   setArticles([]);
-  //   setSearchValue('');
-  // };
 
   return (
     <div className="App__container">
@@ -71,7 +67,8 @@ function App() {
       <div className="Search__input--container">
         <input
           className="Search__input--field"
-          type="text"
+          type="search"
+          role="searchbox"
           placeholder="Search for..."
           value={searchValue}
           onChange={event => {
