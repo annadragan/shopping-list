@@ -21,9 +21,7 @@ export default function AddItem({ onAdd }) {
         type="text"
         className="Add__input"
       ></input>
-      <button className="Add__Button" onClick={() => onAdd(itemName)}>
-        Add article
-      </button>
+      <button className="Add__Button">Add article</button>
     </form>
   );
 }

@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
-import { localItems } from './db';
+// import { localItems } from './db';
 import './styles.css';
 import ListItem from './components/ListItem';
 import Header from './components/Header';
@@ -9,7 +9,24 @@ import Subheader from './components/Subheader';
 import Fetch from './components/Fetch';
 
 function App() {
-  const [articles, setArticles] = useState(localItems);
+  // const [articles, setArticles] = useState(localItems);
+  const [articles, setArticles] = useState(loadFromLocal('products') ?? []);
+
+  useEffect(() => {
+    saveToLocal('products', articles);
+  }, [articles]);
+
+  function loadFromLocal(key) {
+    try {
+      return JSON.parse(localStorage.getItem(key));
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  function saveToLocal(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+  }
 
   function handleOnDelete(articleId) {
     setArticles(articles.filter(article => article._id !== articleId));

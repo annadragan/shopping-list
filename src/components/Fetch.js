@@ -13,7 +13,7 @@ export default function Fetch() {
         const data = await response.json();
         setListItem(data.data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     }
   }, []);
