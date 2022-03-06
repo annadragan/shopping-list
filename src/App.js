@@ -41,6 +41,23 @@ function App() {
     };
     setArticles([...articles, newArticleName]);
   }
+
+  function handleOnSearch(shoppingItems) {
+    const newItem = {
+      _id: shoppingItems._id,
+      _type: shoppingItems._type,
+      category: shoppingItems.category,
+      name: { en: shoppingItems.name.en, de: '' },
+    };
+    if (articles.map(article => article._id).includes(newItem._id)) {
+      alert('The article is already on your list');
+      setSearchValue('');
+    } else {
+      setSearchValue('');
+      setArticles([...articles, newItem]);
+    }
+  }
+
   return (
     <div className="App__container">
       <Header text="Shopping List" />
@@ -50,6 +67,7 @@ function App() {
       <div className="Search__input--container">
         <input
           className="Search__input--field"
+          type="text"
           placeholder="Search for..."
           value={searchValue}
           onChange={event => {
@@ -57,9 +75,10 @@ function App() {
           }}
         ></input>
       </div>
-      {searchValue && <Fetch value={searchValue} />}
+      {searchValue && (
+        <Fetch value={searchValue} onSearchItem={handleOnSearch} />
+      )}
     </div>
   );
 }
-
 export default App;

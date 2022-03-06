@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Fetch.css';
 
-export default function Fetch({ value }) {
+export default function Fetch({ value, onSearchItem }) {
   const [listItem, setListItem] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,14 @@ export default function Fetch({ value }) {
           curry.name.en.toLowerCase().includes(value.toLowerCase())
         )
         .map(curry => (
-          <li key={curry._id}>{curry.name.en}</li>
+          <li
+            key={curry._id}
+            onClick={() => {
+              onSearchItem(curry);
+            }}
+          >
+            {curry.name.en}
+          </li>
         ))}
     </ul>
   );
