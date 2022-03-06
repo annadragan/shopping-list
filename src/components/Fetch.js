@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './Fetch.css';
 
 export default function Fetch({ value }) {
   const [listItem, setListItem] = useState([]);
@@ -18,7 +19,7 @@ export default function Fetch({ value }) {
     }
   }, []);
   return (
-    <ul>
+    <ul role="list" className="Fetch__data__list">
       {listItem
         .filter(curry =>
           curry.name.en.toLowerCase().includes(value.toLowerCase())

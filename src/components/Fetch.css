@@ -1,0 +1,8 @@
+.Fetch__data__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  flex-direction: column;
+}

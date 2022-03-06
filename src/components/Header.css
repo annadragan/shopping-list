@@ -5,4 +5,5 @@
   display: flex;
   justify-content: center;
   background-color: rgb(209, 123, 140);
+  width: 100%;
 }

@@ -9,3 +9,25 @@ body {
   display: grid;
   padding: 20px;
 }
+
+.Search__input--container {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(209, 123, 140);
+  border: 1px solid whitesmoke;
+  margin-top: 15%;
+  padding: 8px 16px;
+  border-radius: 999px;
+  align-self: center;
+}
+
+.Search__input--field {
+  font-size: 1rem;
+}
+
+.App__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

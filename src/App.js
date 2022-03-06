@@ -42,20 +42,23 @@ function App() {
     setArticles([...articles, newArticleName]);
   }
   return (
-    <>
+    <div className="App__container">
       <Header text="Shopping List" />
       <ListItem curry={articles} onDelete={handleOnDelete} />
       <Subheader question="What do you want to buy?" />
       <AddItem onAdd={handleOnAdd} />
-      <input
-        placeholder="Search for..."
-        value={searchValue}
-        onChange={event => {
-          setSearchValue(event.target.value);
-        }}
-      ></input>
+      <div className="Search__input--container">
+        <input
+          className="Search__input--field"
+          placeholder="Search for..."
+          value={searchValue}
+          onChange={event => {
+            setSearchValue(event.target.value);
+          }}
+        ></input>
+      </div>
       {searchValue && <Fetch value={searchValue} />}
-    </>
+    </div>
   );
 }
 
