@@ -11,6 +11,7 @@ import Fetch from './components/Fetch';
 function App() {
   // const [articles, setArticles] = useState(localItems);
   const [articles, setArticles] = useState(loadFromLocal('products') ?? []);
+  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     saveToLocal('products', articles);
@@ -46,7 +47,14 @@ function App() {
       <ListItem curry={articles} onDelete={handleOnDelete} />
       <Subheader question="What do you want to buy?" />
       <AddItem onAdd={handleOnAdd} />
-      <Fetch />
+      <input
+        placeholder="Search for..."
+        value={searchValue}
+        onChange={event => {
+          setSearchValue(event.target.value);
+        }}
+      ></input>
+      <Fetch value={searchValue} />
     </>
   );
 }

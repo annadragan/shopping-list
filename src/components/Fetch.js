@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function Fetch() {
+export default function Fetch({ value }) {
   const [listItem, setListItem] = useState([]);
 
   useEffect(() => {
@@ -19,9 +19,18 @@ export default function Fetch() {
   }, []);
   return (
     <ul>
-      {listItem.map(curry => (
-        <li key={curry._id}>{curry.name.en}</li>
-      ))}
+      {listItem
+        .filter(curry =>
+          curry.name.en.toLowerCase().includes(value.toLowerCase())
+        )
+        .map(curry => (
+          <li key={curry._id}>{curry.name.en}</li>
+        ))}
     </ul>
   );
+
+  // const clearInput = () => {
+  //   setListItem([]);
+  //   listItem("");
+  // }
 }
