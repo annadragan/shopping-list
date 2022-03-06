@@ -57,6 +57,10 @@ function App() {
       setArticles([...articles, newItem]);
     }
   }
+  // const clearInput = () => {
+  //   setArticles([]);
+  //   setSearchValue('');
+  // };
 
   return (
     <div className="App__container">

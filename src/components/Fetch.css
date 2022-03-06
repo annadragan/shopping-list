@@ -4,5 +4,13 @@
   align-items: center;
   flex-wrap: wrap;
   list-style: none;
-  flex-direction: column;
+}
+.Fetch__data_-item {
+  background-color: rgb(245, 153, 171);
+  border: 1px solid papayawhip;
+  margin: 5px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  align-self: center;
+  color: whitesmoke;
 }

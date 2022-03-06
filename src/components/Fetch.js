@@ -26,6 +26,7 @@ export default function Fetch({ value, onSearchItem }) {
         )
         .map(curry => (
           <li
+            className="Fetch__data_-item"
             key={curry._id}
             onClick={() => {
               onSearchItem(curry);
@@ -36,9 +37,4 @@ export default function Fetch({ value, onSearchItem }) {
         ))}
     </ul>
   );
-
-  // const clearInput = () => {
-  //   setListItem([]);
-  //   listItem("");
-  // }
 }
