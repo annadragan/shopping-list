@@ -42,14 +42,14 @@ function App() {
     setArticles([...articles, newArticleName]);
   }
 
-  function handleOnSearch(shoppingItems) {
+  function handleOnSearch(shoppingItem) {
     const newItem = {
-      _id: shoppingItems._id,
-      _type: shoppingItems._type,
-      category: shoppingItems.category,
-      name: { en: shoppingItems.name.en, de: '' },
+      _id: shoppingItem._id,
+      _type: shoppingItem._type,
+      category: shoppingItem.category,
+      name: { en: shoppingItem.name.en, de: '' },
     };
-    if (articles.map(article => article._id).includes(newItem._id)) {
+    if (articles.find(article => article._id) === newItem._id) {
       alert('The article is already on your list');
       setSearchValue('');
     } else {
