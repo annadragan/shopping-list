@@ -7,11 +7,14 @@ import Header from './components/Header';
 import AddItem from './components/AddItem';
 import Subheader from './components/Subheader';
 import Fetch from './components/Fetch';
+import ToggleButton from './components/Toggle';
 
 function App() {
   // const [articles, setArticles] = useState(localItems);
   const [articles, setArticles] = useState(loadFromLocal('products') ?? []);
   const [searchValue, setSearchValue] = useState('');
+
+  const [language, setLanguage] = ToggleButton();
 
   useEffect(() => {
     saveToLocal('products', articles);
@@ -70,7 +73,10 @@ function App() {
           onChange={event => {
             setSearchValue(event.target.value);
           }}
-        ></input>
+        />
+        <button className="Toggle__button" onClick={setLanguage}>
+          {language ? 'Deutsch' : 'English'}
+        </button>
       </div>
       {searchValue && (
         <Fetch value={searchValue} onSearchItem={handleOnSearch} />

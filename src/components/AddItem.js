@@ -9,20 +9,22 @@ export default function AddItem({ onAdd }) {
     onAdd(itemName);
     setItemName('');
   }
+
   return (
     <form className="Add-item__form" onSubmit={handleSubmit}>
-      <label htmlFor="new-item" className="Add-item__label">
+      <label htmlFor="new__item" className="Add-item__label">
         Your article:
       </label>
       <input
-        id="new-item"
+        id="new__item"
         onChange={event => setItemName(event.target.value)}
         value={itemName}
         role="searchbox"
         type="search"
         className="Add__input"
-      ></input>
-      <button aria-label={'add button'} className="Add__Button">
+        required
+      />
+      <button aria-label={'click to add item'} className="Add__Button">
         Add article
       </button>
     </form>

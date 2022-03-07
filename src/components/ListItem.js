@@ -8,7 +8,7 @@ export default function ListItem({ curry, onDelete }) {
           <li
             className="Shopping__list__item"
             key={item._id}
-            aria-label={'delete button'}
+            aria-label={'click to delete item'}
           >
             <button
               className="Shopping__list__item__button"

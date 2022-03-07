@@ -2,12 +2,16 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #12121a;
   margin: 0 auto;
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: whitesmoke;
   display: grid;
   padding: 20px;
+  background-image: url(./image/bruna-branco-Uq5i5_cQdr8-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-color: #12121a;
 }
 
 .Search__input--container {
@@ -28,6 +32,20 @@ body {
 .App__container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+
+.Toggle__button {
+  padding: 5px;
+  background-color: #12121a;
+  border-radius: 7px;
+  border: 2px solid azure;
+  color: whitesmoke;
+  margin: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Toggle__button:hover {
+  opacity: 0.8;
 }
