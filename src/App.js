@@ -1,20 +1,17 @@
-import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
-// import { localItems } from './db';
-import './styles.css';
-import ListItem from './components/ListItem';
-import Header from './components/Header';
+import { useEffect, useState } from 'react';
 import AddItem from './components/AddItem';
+import SearchedShoppingList from './components/SearchedShoppingList';
+import Header from './components/Header';
+import ShoppingList from './components/ShoppingList';
 import Subheader from './components/Subheader';
-import Fetch from './components/Fetch';
-import ToggleButton from './components/Toggle';
+import useToggle from './hooks/useToggle';
+import './styles.css';
 
 function App() {
-  // const [articles, setArticles] = useState(localItems);
   const [articles, setArticles] = useState(loadFromLocal('products') ?? []);
   const [searchValue, setSearchValue] = useState('');
-
-  const [language, setLanguage] = ToggleButton();
+  const [language, setLanguage] = useToggle();
 
   useEffect(() => {
     saveToLocal('products', articles);
@@ -58,7 +55,7 @@ function App() {
   return (
     <div className="App__container">
       <Header text="Shopping List" />
-      <ListItem curry={articles} onDelete={handleOnDelete} />
+      <ShoppingList articles={articles} onDelete={handleOnDelete} />
       <Subheader question="What do you want to buy?" />
       <AddItem onAdd={handleOnAdd} />
       <div className="Search__input--container">
@@ -79,7 +76,10 @@ function App() {
         </button>
       </div>
       {searchValue && (
-        <Fetch value={searchValue} onSearchItem={handleOnSearch} />
+        <SearchedShoppingList
+          value={searchValue}
+          onSearchItem={handleOnSearch}
+        />
       )}
     </div>
   );

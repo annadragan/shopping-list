@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import './Fetch.css';
 
-export default function Fetch({ value, onSearchItem }) {
-  const [listItem, setListItem] = useState([]);
+export default function SearchedShoppingList({ value, onSearchItem }) {
+  const [listItems, setListItems] = useState([]);
 
   useEffect(() => {
     loadItems();
@@ -12,7 +12,7 @@ export default function Fetch({ value, onSearchItem }) {
           'https://fetch-me.vercel.app/api/shopping/items'
         );
         const data = await response.json();
-        setListItem(data.data);
+        setListItems(data.data);
       } catch (error) {
         console.error(error);
       }
@@ -20,7 +20,7 @@ export default function Fetch({ value, onSearchItem }) {
   }, []);
   return (
     <ul role="list" className="Fetch__data__list">
-      {listItem
+      {listItems
         .filter(curry =>
           curry.name.en.toLowerCase().includes(value.toLowerCase())
         )

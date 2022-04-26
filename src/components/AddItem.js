@@ -11,7 +11,7 @@ export default function AddItem({ onAdd }) {
   }
 
   return (
-    <form className="Add-item__form" onSubmit={handleSubmit}>
+    <form autocomplete='off' className="Add-item__form" onSubmit={handleSubmit}>
       <label htmlFor="new__item" className="Add-item__label">
         Your article:
       </label>

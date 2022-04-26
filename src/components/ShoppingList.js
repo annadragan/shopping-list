@@ -1,9 +1,9 @@
-import './ListItem.css';
+import './ShoppingList.css';
 
-export default function ListItem({ curry, onDelete }) {
+export default function ShoppingList({ articles, onDelete }) {
   return (
     <ul role="list" className="Shopping__list">
-      {curry.map(item => {
+      {articles.map(item => {
         return (
           <li
             className="Shopping__list__item"
