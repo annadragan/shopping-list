@@ -60,7 +60,10 @@ function App() {
       <Subheader question="What do you want to buy?" />
       <AddItem onAdd={handleOnAdd} />
       <div className="Search__input--container">
-        <label htmlFor="new-article"></label>
+        <label
+          htmlFor="new-article"
+          aria-labelledby="Search for your article"
+        ></label>
         <input
           id="new-article"
           className="Search__input--field"
