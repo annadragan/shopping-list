@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0 auto;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: whitesmoke;
+  display: grid;
+  padding: 20px;
+  background-image: url(./image/bruna-branco-Uq5i5_cQdr8-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-color: #12121a;
+}

@@ -1,0 +1,24 @@
+.Shopping__list {
+  list-style: none;
+  padding: 5px;
+  color: #ccd;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.Shopping__list__item {
+  background-color: papayawhip;
+  border: 1px solid crimson;
+  margin: 5px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  align-self: center;
+}
+
+.Shopping__list__item__button {
+  border: none;
+  background-color: papayawhip;
+}

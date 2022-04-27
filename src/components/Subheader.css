@@ -1,0 +1,8 @@
+.Subheader {
+  border-top: 1px solid #ccd;
+  border-bottom: 1px solid #ccd;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 6%;
+}

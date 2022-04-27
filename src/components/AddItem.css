@@ -1,0 +1,27 @@
+.Add-item__form {
+  display: flex;
+  justify-content: center;
+}
+
+.Add__Button {
+  background-color: rgb(209, 123, 140);
+  border: 1px solid whitesmoke;
+  margin: 5px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 1rem;
+  align-self: center;
+  color: whitesmoke;
+  height: 7%;
+}
+
+.Add-item__label {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.Add__input {
+  border-radius: 5px;
+  height: 35px;
+}
