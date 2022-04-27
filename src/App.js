@@ -1,8 +1,9 @@
 import { nanoid } from 'nanoid';
 import { useEffect, useState } from 'react';
+import './App.css';
 import AddItem from './components/AddItem';
-import SearchedShoppingList from './components/SearchedShoppingList';
 import Header from './components/Header';
+import SearchedShoppingList from './components/SearchedShoppingList';
 import ShoppingList from './components/ShoppingList';
 import Subheader from './components/Subheader';
 import useToggle from './hooks/useToggle';

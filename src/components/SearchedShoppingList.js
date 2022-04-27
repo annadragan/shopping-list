@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './Fetch.css';
+import './SearchedShoppingList.css';
 
 export default function SearchedShoppingList({ value, onSearchItem }) {
   const [listItems, setListItems] = useState([]);
@@ -21,18 +21,18 @@ export default function SearchedShoppingList({ value, onSearchItem }) {
   return (
     <ul role="list" className="Fetch__data__list">
       {listItems
-        .filter(curry =>
-          curry.name.en.toLowerCase().includes(value.toLowerCase())
+        .filter(product =>
+          product.name.en.toLowerCase().includes(value.toLowerCase())
         )
-        .map(curry => (
+        .map(product => (
           <li
             className="Fetch__data_-item"
-            key={curry._id}
+            key={product._id}
             onClick={() => {
-              onSearchItem(curry);
+              onSearchItem(product);
             }}
           >
-            {curry.name.en}
+            {product.name.en}
           </li>
         ))}
     </ul>
